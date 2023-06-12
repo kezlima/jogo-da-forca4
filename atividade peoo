@@ -1,0 +1,41 @@
+# jogo-da-forca1 alunas:kezya e kaliane
+pergunta=(input("vamos jogar?"))
+if (pergunta=="sim"):
+    jogador=(input("qual é o seu nome?"))
+    print(f"digite uma letra {jogador}")
+elif(pergunta=="não"):
+    print("tudo bem. obrigada!")
+    exit()
+else:
+    print("obrigada")
+    exit()
+ 
+chance=6
+palavra="a","m","o","r"
+descoberta=[]
+for i in range(0,len(palavra)):
+ descoberta.append("_")
+
+x=0
+while(x==0):
+ p_digitada=input(f"digite uma letra {jogador}:")
+ for i in range(0,len(palavra)):
+  if p_digitada==palavra[i]:
+     descoberta[i]=p_digitada
+  print(descoberta[i],end=" ")
+ if p_digitada not in palavra:
+    print(f"palavra errada {jogador}")
+    chance=chance-1
+    print(chance,"chances")
+ if chance==3:
+    print("uma dica é um sentimento")
+ elif chance==2:
+    print("A palavra começa com a letra 'a'")
+ if(chance==0):
+    print("vc perdeu, a palavra era amor") 
+    break 
+ x=1
+ for i in range(0,len(descoberta)):
+   if descoberta[i]=="_":
+    x=0
+print(f":parabens {jogador}")
